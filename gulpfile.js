@@ -5,6 +5,7 @@ var gulp 				= require('gulp'),
 	LessAutoprefix 		= require('less-plugin-autoprefix'),
 	path 				= require('path'),
 	livereload			= require('gulp-livereload'),
+	uncss 				= require('gulp-uncss'),
 	connect 			= require('gulp-connect'),
 	watch 				= require('gulp-watch');
 
@@ -71,6 +72,14 @@ gulp.task('mainHTML', function()
 gulp.task('watch', function()
 {
 
+});
+
+gulp.task('unCSS', function () {
+	return gulp.src('./app/css/main.css')
+		.pipe(uncss({
+			html: './app/index.html'
+		}))
+        .pipe(gulp.dest('./out'));
 });
 
 gulp.task('default', ['mainfiles', 'less', 'concatCSS', 'mainHTML']);
