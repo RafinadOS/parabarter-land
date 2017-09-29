@@ -28,17 +28,12 @@ gulp.task('mainfiles', function()
 			"jquery" : {
 				"main": "./dist/jquery.min.js"
 			},
-			"semantic" : {
-				"main" : [
-					"./dist/components/grid.min.css"
-				]
-			},
 			"xsl.reset-css" : {
 				"main" : "./reset.css"
 			}
 		}
 	}))
-		.pipe(gulp.dest('dist/mainfiles'))
+	.pipe(gulp.dest('dist/mainfiles'))
 });
 
 gulp.task('less', function()
@@ -47,7 +42,8 @@ gulp.task('less', function()
 	.pipe(less({
 		plugins: [autoprefix]
 	}))
-	.pipe(gulp.dest('./dist/mainfiles'));
+	.pipe(gulp.dest('./dist/mainfiles'))
+	.pipe(connect.reload())
 });
 
 
@@ -59,19 +55,37 @@ gulp.task('concatCSS', function()
 		'dist/**/*.css'
 		])
 	.pipe(concatCss('css/main.css'))
-	.pipe(gulp.dest('app/'));
+	.pipe(gulp.dest('app/'))
+	.pipe(connect.reload())
 });
 
 gulp.task('mainHTML', function()
 {
 	return gulp.src('./*.html')
 	.pipe(gulp.dest('app'))
+	.pipe(connect.reload())
 });
 
+gulp.task('mainJS', function()
+{
+	return gulp.src('./dist/mainfiles/*.js')
+	.pipe(gulp.dest('app/js'))
+	.pipe(connect.reload())
+});
+
+gulp.task('fonts', function()
+{
+	return gulp.src('./dist/fonts/*.*')
+	.pipe(gulp.dest('./app/fonts/'))
+	.pipe(connect.reload())
+});
 
 gulp.task('watch', function()
 {
-
+	gulp.watch('dist/**/*.less', ['less'])
+	gulp.watch('*.html', ['mainHTML'])
+	gulp.watch('dist/**/*.css', ['concatCSS'])
+	gulp.watch('dist/**/*.js', ['mainJS'])
 });
 
 // gulp.task('unCSS', function () {
@@ -82,4 +96,4 @@ gulp.task('watch', function()
 // 	.pipe(gulp.dest('./out'));
 // });
 
-gulp.task('default', ['mainfiles', 'less', 'concatCSS', 'mainHTML']);
+gulp.task('default', ['connect', 'mainfiles', 'mainJS', 'less', 'concatCSS', 'mainHTML', 'fonts', 'watch']);

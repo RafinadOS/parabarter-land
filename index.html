@@ -2,9 +2,118 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Site name</title>
+	<link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
-	
+<body class="theme-blue">
+	<header class="header section">
+		<div class="wrapper wrapper-header">
+			<div class="header__title">
+				<p>Юридическая компания «ПРАВОВОЙ ГАРАНТ» оказывает юридические, бухгалтерские и консалтинговые услуги для клиентов</p>
+			</div>
+			<div class="header__logo">
+				<img src="https://upload.wikimedia.org/wikipedia/en/8/87/Foxtel_Smooth_Logo.png" alt="">
+			</div>
+			<div class="header__info">
+				<a href="tel: 8 800 000-00-00" class="header__info-phone">8 800 000-00-00</a><br>
+				<a href="#" class="header__info-callback">Заказать звонок</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- блок с фоновой картинкой -->
+	<section class="present" style="background-image: url('https://ptzgovorit.ru/sites/default/files/styles/700x400/public/original_nodes/140_0.jpg')">
+		<div class="wrapper">
+			<h1 class="present__title">Юридическая компания<br>«Правовой Гарант»</h1>
+			<p class="present__untitle">оказывает юридические, бухгалтерские<br>и консалтинговые услуги для клиентов</p>
+			<a href="#" class="present__callback button">Оставить заявку</a>
+		</div>
+	</section>
+
+	<!-- блок информации о компании -->
+	<section class="info">
+		<div class="wrapper wrapper-info">
+			<p class="wrapper__title">Информация о нашей компании</p>
+			<p>Юридическая компания «ПРАВОВОЙ ГАРАНТ» оказывает юридические, бухгалтерские и консалтинговые услуги для клиентов с 2000 года. Среди многочисленных коллег и конкурентов, нашу компанию в качестве партнера по бизнесу выбирают, как отечественные компании, так и многие предприятия с иностранными инвестициями.</p>
+			<p>Наша компания оказывает клиентам широкий спектр услуг, начиная от разовых юридических консультаций, заканчивая комплексным юридическим сопровождением крупных проектов.</p>
+			<p>Нашей профильной задачей является оказание квалифицированной юридической помощи не только частным клиентам, но и субъектам малого, среднего и крупного бизнеса.</p>
+			<p>Состав сотрудников нашей кампании образует сильная команда юристов, адвокатов, бухгалтеров, экспертов-оценщиков, арбитражных управляющих, кадровых специалистов. Богатый опыт, профессионализм, накопленный более чем за 15 лет нашей работы, наличие практических навыков и специальных знаний, позволяют нам успешно разрешать самые сложные вопросы и реализовывать любые проекты наших клиентов.</p>
+		</div>
+	</section>
+
+	<section class="gallery">
+		<div class="wrapper owl-carousel" id="gallery">
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+			<div class="item"></div>
+		</div>
+	</section>
+
+	<!-- блок с формой -->
+	<section class="callback" style="background-image: url('https://ptzgovorit.ru/sites/default/files/styles/700x400/public/original_nodes/140_0.jpg')">
+		<div class="wrapper">
+			<p class="wrapper__title wrapper__title-big">Заказать юридические услуги</p>
+			<p class="wrapper__title wrapper__title-small">Оставьте заявку прямо сейчас</p>
+			<form action="" class="callback-form">
+				<div class="callback-form__row">
+					<div class="callback-form__item">
+						<input type="text" class="callback-form__input" placeholder="Ваше имя *" required>
+					</div>
+					<div class="callback-form__item">
+						<input type="text" class="callback-form__input" placeholder="Ваш телефон *" required>
+					</div>
+					<div class="callback-form__item">
+						<input type="email" class="callback-form__input" placeholder="E-mail">
+					</div>
+				</div>
+				<input type="submit" class="callback-form__button button" value="Оставить заявку">
+			</form>
+		</div>
+	</section>
+
+	<!-- блок контактов -->
+	<section class="contacts">
+		<div class="wrapper">
+			<p class="wrapper__title wrapper__title-big">Контакты</p>
+			<p>Москва, ул. Ремонтная, д. 57, офис 234</p>
+			<p>8 800 000-00-00</p>
+		</div>
+	</section>
+
+	<!-- блок с картой -->
+	<section class="map" id="map">
+		<div class="wrapper wrapper-map">
+			<div class="map__container">
+				<p class="map__title">Мы на карте</p>
+				<p class="map__text">Москва, ул. Ремонтная, д. 57, офис 234</p>
+			</div>
+		</div>
+	</section>
+
+	<footer class="section">
+		<div class="wrapper wrapper-footer">
+			<div class="footer__title">
+				<p>Юридическая компания «ПРАВОВОЙ ГАРАНТ» оказывает юридические, бухгалтерские и консалтинговые услуги для клиентов</p>
+			</div>
+			<div class="footer__logo">
+				<img src="https://upload.wikimedia.org/wikipedia/en/8/87/Foxtel_Smooth_Logo.png" alt="">
+			</div>
+			<div class="footer__info">
+				<a href="tel: 8 800 000-00-00" class="header__info-phone">8 800 000-00-00</a><br>
+				<a href="#" class="footer__info-callback">Заказать звонок</a>
+			</div>
+		</div>
+	</footer>
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/owl.carousel.min.js"></script>
+	<script src="./js/main.js"></script>
+	<script type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A834e99a97453487e0b040c9619bf7aa54450e75709460b9dc67802e2e589b9c8&amp;width=auto&amp;height=570&amp;id=map"></script>
 </body>
 </html>
